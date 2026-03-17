@@ -1,4 +1,4 @@
-# Zaikouski Siarhei
+# Siarhei Zaikouski
 
 ## Contact information
 
