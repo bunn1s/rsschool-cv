@@ -1,4 +1,1 @@
-# My CV
-Name: Sergey
-## Skills
--JavaScript (basic)
+# Zaikouski Siarhei
