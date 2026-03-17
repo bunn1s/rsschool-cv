@@ -12,3 +12,12 @@
 I am learning Frontend Development at Rolling Scopes School.  
 I am motivated to gain new skills and work on small projects to improve my knowledge.  
 I like solving problems and creating simple web pages.
+
+## Skills
+
+I will learn:
+
+- HTML, CSS
+- JavaScript
+- Git, GitHub
+- VS Code
