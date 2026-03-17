@@ -21,3 +21,13 @@ I will learn:
 - JavaScript
 - Git, GitHub
 - VS Code
+
+## Courses
+
+- Rolling Scopes School: Pre-School / Stage 0
+- Free online tutorials: HTML, CSS, JavaScript
+
+## Languages
+
+- Russian — Native
+- English — Beginner
