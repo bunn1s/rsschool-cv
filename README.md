@@ -1,7 +1,5 @@
 # CV Project — RS School
 
-##  Markdown CV
-[Markdown CV](https://bunn1s.github.io/rsschool-cv/cv.md)
+## [Markdown CV](https://bunn1s.github.io/rsschool-cv/cv)
 
-##  HTML CV
-[HTML CV](https://bunn1s.github.io/rsschool-cv/)
+## [HTML CV](https://bunn1s.github.io/rsschool-cv/)
