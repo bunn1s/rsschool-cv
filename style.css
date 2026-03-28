@@ -5,15 +5,64 @@
     box-sizing: border-box;
 }
 
+/* Animatied background*/
 body {
+    background: linear-gradient(270deg, #c9c262, #764ba2, #93fbf6, #f5b657);
+    background-size: 600% 600%;
+    animation: gradientShift 30s ease infinite;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    margin: 0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 250px;
+    height: 250%;
+    background: url('rs-school-logo.svg') no-repeat center;
+    background-size: contain;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatLogo 20s linear infinite;
+}
+
+body::before {
+    top: -75%;
+    left: 7%;
+    animation-duration: 30s;
+}
+
+body::after {
+    bottom: -75%;
+    right: 7%;
+    animation-duration: 30s;
+    animation-direction: reverse;
+}
+
+@keyframes floatLogo {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+    50% {
+        transform: rotate(180deg) translate(20px, 20px);
+    }
+    100% {
+        transform: rotate(360deg) translate(0, 0);
+    }
 }
 
 .container {
