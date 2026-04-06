@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/img/snowflake.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,17 +19,17 @@
   <div class="container">
     <div class="header__wrapper">
 
-      <a href="#" class="logo">
+      <a href="./index.html" class="logo" aria-label="Go to Home page">
         <img src="./assets/img/snowflake.svg" alt="Logo" class="logo__img">
         <span class="logo__text">THE GIFTS</span>
       </a>
 
       <nav class="nav">
   <ul class="nav__list">
-    <li class="nav__item"><a href="#" class="nav__link">GIFTS</a></li>
-    <li class="nav__item"><a href="#" class="nav__link">ABOUT</a></li>
-    <li class="nav__item"><a href="#" class="nav__link">BEST</a></li>
-    <li class="nav__item"><a href="#" class="nav__link">CONTACTS</a></li>
+    <li class="nav__item"><a href="./gifts/" class="nav__link">GIFTS</a></li>
+    <li class="nav__item"><a href="#about" class="nav__link">ABOUT</a></li>
+    <li class="nav__item"><a href="#best" class="nav__link">BEST</a></li>
+    <li class="nav__item"><a href="#contacts" class="nav__link">CONTACTS</a></li>
   </ul>
     </nav>
 
@@ -36,28 +37,27 @@
   </div>
 </header>
 
-
 <footer class="footer">
-  <div class="container">
+  <div class="container" id="contacts">
 
     <div class="footer__cards">
-      <div class="footer-card">
+      <a class="footer-card" href="tel:+375291112233" aria-label="Call us">
         <img src="./assets/img/santa-claus.svg" alt="Santa" class="footer-card__img">
         <h3 class="footer-card__title">+375 (29) 111-22-33</h3>
         <p class="footer-card__desc">CALL US</p>
-      </div>
+      </a>
 
-      <div class="footer-card">
+      <a class="footer-card" href="https://www.google.com/maps" target="_blank" rel="noreferrer" aria-label="Open location in Google Maps">
         <img src="./assets/img/christmas-tree.svg" alt="Tree" class="footer-card__img">
         <h3 class="footer-card__title">MAGIC FOREST</h3>
         <p class="footer-card__desc">MEET US</p>
-      </div>
+      </a>
 
-      <div class="footer-card">
+      <a class="footer-card" href="mailto:gifts@magic.com" aria-label="Write us an email">
         <img src="./assets/img/snake.svg" alt="Snake" class="footer-card__img">
         <h3 class="footer-card__title">GIFTS@MAGIC.COM</h3>
         <p class="footer-card__desc">WRITE US</p>
-      </div>
+      </a>
     </div>
 
     <div class="footer__socials">
@@ -70,8 +70,14 @@
 
     <div class="footer__info">
       <p>© Copyright 2025, All Rights Reserved</p>
-      <p class="footer__made">Made in Rolling Scopes School</p>
+      <a class="footer__made" href="https://rs.school/" target="_blank" rel="noreferrer">Made in Rolling Scopes School</a>
     </div>
 
   </div>
 </footer>
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
