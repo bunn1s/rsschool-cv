@@ -26,7 +26,7 @@
 
       <nav class="nav">
   <ul class="nav__list">
-    <li class="nav__item"><a href="./gifts/" class="nav__link">GIFTS</a></li>
+    <li class="nav__item"><a href="./gifts.html" class="nav__link">GIFTS</a></li>
     <li class="nav__item"><a href="#about" class="nav__link">ABOUT</a></li>
     <li class="nav__item"><a href="#best" class="nav__link">BEST</a></li>
     <li class="nav__item"><a href="#contacts" class="nav__link">CONTACTS</a></li>
@@ -39,11 +39,11 @@
 
 <!-- Section Hero -->
 <section class="hero">
-      <div class="container">
-        <div class="hero-content">
+      <div class="hero__container">
+        <div class="hero__content">
           <p class="hero__cursive">Merry Christmas</p>
           <h1 class="hero__title">Gift yourself <br> the magic of new possibilities</h1>
-          <a href="./gifts/" class="hero__button">Explore Magical Gifts</a>
+          <a href="./gifts.html" class="hero__button">Explore Magical Gifts</a>
           <p class="hero__cursive">and Happy New Year</p>
         </div>
       </div>
@@ -88,7 +88,8 @@
       <img src="./assets/img/image-container/castle.svg" alt="Castle" class="slider__img">
     </div>
   </div>
-  <div class="container"></div>
+
+  <div class="container">
     <div class="slider__controls">
       <button class="slider__btn slider__btn--prev" aria-label="Rearward" disabled>
         <img src="./assets/img/image-container/vector-left.svg" alt="Left">
@@ -96,6 +97,98 @@
       <button class="slider__btn slider__btn--next" aria-label="Forward">
       <img src="./assets/img/image-container/vector-right.svg" alt="Right">
       </button>
+    </div>
+  </div>
+</section>
+
+<!-- Gifts Section -->
+<section class="gifts-section" id="gifts">
+  <div class="container">
+    <div class="gifts__header">
+      <p class="gifts__label">Best Gifts!</p>
+      <h2 class="gifts__title">ESPECIALLY FOR YOU</h2>
+    </div>
+
+    <div class="gifts__grid">
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-work.png" alt="Gift Work" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--work">For Work</p>
+          <h3 class="gift-card__title">Console.log Guru</h3>
+        </div>
+      </article>
+
+
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-health.png" alt="Gift Health" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--health">For Health</p>
+          <h3 class="gift-card__title">Hydration Bot</h3>
+        </div>
+      </article>
+
+
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-work.png" alt="Gift Work" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--work">For Work</p>
+          <h3 class="gift-card__title">Merge Master</h3>
+        </div>
+      </article>
+
+
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-harmony.png" alt="Gift Harmony" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--harmony">For Harmony</p>
+          <h3 class="gift-card__title">Spontaneous Coding Philosopher</h3>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section CTA -->
+<section class="cta-section">
+  <div class="cta__container">
+    <div class="cta__content">
+      <h2 class="cta__title">Ready to start your journey to a better <br> version of yourself?</h2>
+      <a href="./gifts.html" class="cta__button">Explore Magical Gifts</a>
+      <p class="cta__cursive">The New Year is Coming Soon...</p>
+
+      <div class="cta__timer">
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">47</span>
+          <span class="cta__timer-text">Days</span>
+        </div>
+
+        <div class="cta__timer-divider"></div>
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">5</span>
+          <span class="cta__timer-text">Hours</span>
+        </div>
+
+        <div class="cta__timer-divider"></div>
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">34</span>
+          <span class="cta__timer-text">Minutes</span>
+        </div>
+
+        <div class="cta__timer-divider"></div>
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">12</span>
+          <span class="cta__timer-text">Seconds</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
