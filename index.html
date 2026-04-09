@@ -1,107 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Siarhei Zaikouski</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Shop - Home</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/img/snowflake.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="container">
+<header class="header">
+  <div class="container">
+    <div class="header__wrapper">
 
-  <header>
-    <h1>Siarhei Zaikouski</h1>
+      <a href="./index.html" class="logo" aria-label="Go to Home page">
+        <img src="./assets/img/snowflake.svg" alt="Logo" class="logo__img">
+        <span class="logo__text">THE GIFTS</span>
+      </a>
 
-    <img src="avatar.jpg" alt="Siarhei Zaikouski photo">
-
-    <nav>
-      <ul>
-        <li><a href="#contacts">Contacts</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#code">Code Example</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#languages">Languages</a></li>
-      </ul>
+      <nav class="nav">
+  <ul class="nav__list">
+    <li class="nav__item"><a href="./gifts.html" class="nav__link">GIFTS</a></li>
+    <li class="nav__item"><a href="#about" class="nav__link">ABOUT</a></li>
+    <li class="nav__item"><a href="#best" class="nav__link">BEST</a></li>
+    <li class="nav__item"><a href="#contacts" class="nav__link">CONTACTS</a></li>
+  </ul>
     </nav>
-  </header>
 
-  <main>
+    </div>
+  </div>
+</header>
 
-    <section id="contacts">
-      <h2>Contact information</h2>
-      <ul>
-        <li>Phone: +375 29 882 76 44</li>
-        <li>Email: <a href="mailto:anysys1992@gmail.com">anysys1992@gmail.com</a></li>
-        <li>Telegram: <a href="https://t.me/bunn1s">@bunn1s</a></li>
-        <li>GitHub: <a href="https://github.com/bunn1s">bunn1s</a></li>
-      </ul>
-    </section>
+<!-- MAIN PAGE -->
+<!-- Section Hero -->
+<section class="hero">
+      <div class="hero__container">
+        <div class="hero__content">
+          <p class="hero__cursive">Merry Christmas</p>
+          <h1 class="hero__title">Gift yourself <br> the magic of new possibilities</h1>
+          <a href="./gifts.html" class="hero__button">Explore Magical Gifts</a>
+          <p class="hero__cursive">and Happy New Year</p>
+        </div>
+      </div>
+</section>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am learning Frontend Development at Rolling Scopes School.
-        I am motivated to gain new skills and work on small projects to improve my knowledge.
-        I like solving problems and creating simple web pages.
-      </p>
-    </section>
+<!-- Section About -->
+<section id="about" class="about">
+      <div class="container about__container">
+        <div class="about__card">
+          <div class="about__content">
+            <p class="about__label">About</p>
+            <h2 class="about__title">Unleash your inner superhero!</h2>
+            <p class="about__text">
+              This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.
+            </p>
+          </div>
+            <div class="about__media" aria-hidden="true">
+            <img class="about__image" src="./assets/img/santa.svg" alt="Santa">
+          </div>
+        </div>
+      </div>
+</section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML5, CSS3</li>
-        <li>JavaScript (learning)</li>
-        <li>Git, GitHub</li>
-        <li>VS Code</li>
-      </ul>
-    </section>
+<!-- Section Slider -->
+<section class="slider">
+  <div class="container">
+    <div class="slider__header">
+      <p class="slider__label">Become Happier!</p>
+      <h2 class="slider__title">IN THE NEW 2025</h2>
+    </div>
+  </div>
 
-    <section id="code">
-      <h2>Code Example</h2>
-      <pre><code style="font-weight: 900; font-size: 1.1em;">
- const greetUser = (name) => `Hello, ${name}! Welcome to my CV.`;
- console.log(greetUser("Siarhei")); // "Hello, Siarhei! Welcome to my CV."
-      </code></pre>
-    </section>
+  <div class="slider__track-container">
+    <div class="slider__track">
+      <span class="slider__word">Live</span>
+      <img src="./assets/img/image-container/snowman.svg" alt="Snowman" class="slider__img">
+      <span class="slider__word">Create</span>
+      <img src="./assets/img/image-container/gifts.svg" alt="Gifts" class="slider__img">
+      <span class="slider__word">Love</span>
+      <img src="./assets/img/image-container/ball.svg" alt="Ball" class="slider__img">
+      <span class="slider__word">Dream</span>
+      <img src="./assets/img/image-container/castle.svg" alt="Castle" class="slider__img">
+    </div>
+  </div>
 
-    <section id="courses">
-      <h2>Courses</h2>
-      <ul>
-        <li>Rolling Scopes School: JS/FE Pre-School 2026 (Stage 0)</li>
-        <li>Free online tutorials: HTML, CSS, JavaScript basics</li>
-      </ul>
-    </section>
+  <div class="container">
+    <div class="slider__controls">
+      <button class="slider__btn slider__btn--prev" aria-label="Rearward" disabled>
+        <img src="./assets/img/image-container/vector-left.svg" alt="Left">
+      </button>
+      <button class="slider__btn slider__btn--next" aria-label="Forward">
+      <img src="./assets/img/image-container/vector-right.svg" alt="Right">
+      </button>
+    </div>
+  </div>
+</section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="https://github.com/bunn1s/rsschool-cv" target="_blank">CV Project (Markdown & Git)</a> — My first CV, hosted on GitHub Pages</li>
-      </ul>
-    </section>
+<!-- Gifts Section -->
+<section class="gifts-section" id="gifts">
+  <div class="container">
+    <div class="gifts__header">
+      <p class="gifts__label">Best Gifts!</p>
+      <h2 class="gifts__title">ESPECIALLY FOR YOU</h2>
+    </div>
 
-    <section id="languages">
-      <h2>Languages</h2>
-      <ul>
-        <li>Russian — Native</li>
-        <li>English — Beginner (A2)</li>
-      </ul>
-    </section>
+    <div class="gifts__grid">
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-work.png" alt="Gift Work" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--work">For Work</p>
+          <h3 class="gift-card__title">Console.log Guru</h3>
+        </div>
+      </article>
 
-  </main>
 
-<footer>
-  <a href="https://github.com/bunn1s" target="_blank">GitHub (bunn1s)</a>
-  <span>© 2026</span>
-  <a href="https://rs.school/courses/javascript-preschool-ru" target="_blank">
-    <img src="rs-school-logo.svg" alt="RS School logo" width="80">
-  </a>
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-health.png" alt="Gift Health" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--health">For Health</p>
+          <h3 class="gift-card__title">Hydration Bot</h3>
+        </div>
+      </article>
 
+
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-work.png" alt="Gift Work" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--work">For Work</p>
+          <h3 class="gift-card__title">Merge Master</h3>
+        </div>
+      </article>
+
+
+      <article class="gift-card">
+        <div class="gift-card__image-wrapper">
+          <img src="./assets/img/image-gifts/gift-harmony.png" alt="Gift Harmony" class="gift-card__img">
+        </div>
+        <div class="gift-card__content">
+          <p class="gift-card__category gift-card__category--harmony">For Harmony</p>
+          <h3 class="gift-card__title">Spontaneous Coding Philosopher</h3>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section CTA -->
+<section class="cta-section">
+  <div class="cta__container">
+    <div class="cta__content">
+      <h2 class="cta__title">Ready to start your journey to a better <br> version of yourself?</h2>
+      <a href="./gifts.html" class="cta__button">Explore Magical Gifts</a>
+      <p class="cta__cursive">The New Year is Coming Soon...</p>
+
+      <div class="cta__timer">
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">47</span>
+          <span class="cta__timer-text">Days</span>
+        </div>
+
+        <div class="cta__timer-divider"></div>
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">5</span>
+          <span class="cta__timer-text">Hours</span>
+        </div>
+
+        <div class="cta__timer-divider"></div>
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">34</span>
+          <span class="cta__timer-text">Minutes</span>
+        </div>
+
+        <div class="cta__timer-divider"></div>
+        <div class="cta__timer-item">
+          <span class="cta__timer-value">12</span>
+          <span class="cta__timer-text">Seconds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Footer -->
+<footer class="footer">
+  <div class="container" id="contacts">
+
+    <div class="footer__cards">
+      <a class="footer-card" href="tel:+375291112233" aria-label="Call us">
+        <img src="./assets/img/santa-claus.svg" alt="Santa" class="footer-card__img">
+        <h3 class="footer-card__title">+375 (29) 111-22-33</h3>
+        <p class="footer-card__desc">CALL US</p>
+      </a>
+
+      <a class="footer-card" href="https://www.google.com/maps" target="_blank" rel="noreferrer" aria-label="Open location in Google Maps">
+        <img src="./assets/img/christmas-tree.svg" alt="Tree" class="footer-card__img">
+        <h3 class="footer-card__title">MAGIC FOREST</h3>
+        <p class="footer-card__desc">MEET US</p>
+      </a>
+
+      <a class="footer-card" href="mailto:gifts@magic.com" aria-label="Write us an email">
+        <img src="./assets/img/snake.svg" alt="Snake" class="footer-card__img">
+        <h3 class="footer-card__title">GIFTS@MAGIC.COM</h3>
+        <p class="footer-card__desc">WRITE US</p>
+      </a>
+    </div>
+
+    <div class="footer__socials">
+      <a href="#"><img src="./assets/img/telegram.svg" alt="TG"></a>
+      <a href="#"><img src="./assets/img/facebook.svg" alt="FB"></a>
+      <a href="#"><img src="./assets/img/instagram.svg" alt="Insta"></a>
+      <a href="#"><img src="./assets/img/X.svg" alt="X"></a>
+    </div>
+
+
+    <div class="footer__info">
+      <p>© Copyright 2025, All Rights Reserved</p>
+      <a class="footer__made" href="https://rs.school/" target="_blank" rel="noreferrer">Made in Rolling Scopes School</a>
+    </div>
+
+  </div>
 </footer>
 
-</div>
+<!-- Script for Slider -->
+<script src="js/script.js"></script>
+<script>
+  const track = document.querySelector('.slider__track');
+  const btnPrev = document.querySelector('.slider__btn--prev');
+  const btnNext = document.querySelector('.slider__btn--next');
+
+  let position = 0;
+  const step = 450;
+
+  const updateButtons = () => {
+    const maxScroll = track.scrollWidth - track.parentElement.clientWidth;
+    btnPrev.disabled = (position <= 0);
+    btnNext.disabled = (position >= maxScroll);
+  };
+
+  btnNext.addEventListener('click', () => {
+    const maxScroll = track.scrollWidth - track.parentElement.clientWidth;
+    if (position < maxScroll) {
+      position += step;
+      if (position > maxScroll) position = maxScroll;
+      track.style.transform = `translateX(-${position}px)`;
+      updateButtons();
+    }
+  });
+
+  btnPrev.addEventListener('click', () => {
+    if (position > 0) {
+      position -= step;
+      if (position < 0) position = 0;
+      track.style.transform = `translateX(-${position}px)`;
+      updateButtons();
+    }
+  });
+
+  updateButtons();
+</script>
 
 </body>
 </html>
