@@ -106,12 +106,15 @@ body {
 }
 
 .nav__link--inactive {
+  background-color: rgba(255, 70, 70, 0.1);
+  border-radius: 12px;
   cursor: default;
   pointer-events: none;
   color: #181C29;
 }
 
 .nav__link--inactive:hover {
+  background-color: rgba(255, 70, 70, 0.1);
   color: #181C29;
 }
 
