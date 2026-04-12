@@ -37,7 +37,7 @@ body {
 }
 
 .header .container {
-  max-width: 1440px; 
+  max-width: 1440px;
   width: 100%;
   padding: 0 82px;
 }
@@ -133,7 +133,7 @@ body {
   background-size: 1440px auto;
   background-position: center top;
   background-size: cover;
-  border-radius: 20px 20px 0 0; 
+  border-radius: 20px 20px 0 0;
   height: 524px;
   width: 100%;
   max-width: 1440px;
@@ -478,12 +478,15 @@ body {
 
 .gift-card {
   background-color: #F0F6FA;
+  position: relative;
   width: 310px;
   height: 342px;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .gift-card__image-wrapper {
@@ -529,6 +532,33 @@ body {
   line-height: 1.3;
   text-transform: uppercase;
   color: #181C29;
+}
+
+.gift-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(6, 164, 79, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.gift-card:hover::after {
+  opacity: 1;
+}
+
+.gift-card:hover {
+  transform: scale(1.02);
+}
+
+.gift-card:hover .gift-card__title {
+  color: #FF4646 !important;
+  transition: color 0.3s ease;
 }
 
 /* CTA-section */
@@ -671,7 +701,7 @@ body {
   justify-content: center;
   gap: 12px;
   margin-bottom: 60px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .footer-card {
@@ -681,7 +711,7 @@ body {
   padding: 20px;
   width: 417px;
   max-width: 752px;
-  height: auto; 
+  height: auto;
   min-height: 204px;
   text-align: center;
   display: flex;
@@ -881,9 +911,9 @@ body {
 
 /* Smooth transition GIFTS */
 @media (max-width: 850px) {
-  .gifts-page .container, 
+  .gifts-page .container,
   .gifts-section .container {
-    padding-left: 10px; 
+    padding-left: 10px;
     padding-right: 10px;
   }
 }
@@ -894,7 +924,7 @@ body {
   .header .container {
     padding: 0 8px;
   }
-  
+
   .logo {
     margin-left: 0;
     padding: 8px;
@@ -908,7 +938,7 @@ body {
   .burger {
     display: flex;
     position: static;
-    margin-right: 0; 
+    margin-right: 0;
     width: 40px;
     height: 40px;
   }
@@ -940,15 +970,15 @@ body {
     margin: 0 auto;
     padding: 0;
   }
-  
+
   .about__content {
     flex: 1;
     padding: 60px 40px;
     height: auto;
   }
-  
+
   .about__media {
-    flex: 0 0 376px; 
+    flex: 0 0 376px;
     width: 376px;
     height: 528px;
     overflow: hidden;
@@ -973,8 +1003,8 @@ body {
   .slider__controls {
   display: flex;
   justify-content: flex-end;
-  width: calc(100% + 74px) !important; 
-  margin-right: -74px !important; 
+  width: calc(100% + 74px) !important;
+  margin-right: -74px !important;
   position: relative;
   z-index: 5;
   padding-right: 0 !important;
@@ -986,15 +1016,15 @@ body {
   }
 
   .slider__track {
-  padding-left: 8px; 
+  padding-left: 8px;
   display: flex;
   align-items: center;
   gap: 20px;
-  transform: translateX(0) !important; 
+  transform: translateX(0) !important;
   }
 
   .slider__word {
-  font-size: 80px; 
+  font-size: 80px;
   }
 
   .slider__img {
@@ -1006,13 +1036,13 @@ body {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding-right: 8px; 
-  margin: 20px 0 0 0; 
+  padding-right: 8px;
+  margin: 20px 0 0 0;
   padding-bottom: 60px;
   }
 
   .slider__btn {
-  width: 56px; 
+  width: 56px;
   height: 56px;
   }
 
@@ -1022,26 +1052,26 @@ body {
     background-size: cover;
     padding: 60px 0;
     margin-bottom: 0;
-    height: auto !important; 
+    height: auto !important;
   }
-  
+
   .gifts-section .container {
     padding-left: 68px;
     padding-right: 68px;
     max-width: 100%;
   }
-  
+
   .gifts__header {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
   }
-  
+
   .gifts__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     justify-content: center;
   }
-  
+
   /* CTA-section */
   .cta-section {
     background-image: url('../assets/img/cta-section-768.svg');
@@ -1059,43 +1089,43 @@ body {
     padding-right: 68px;
     max-width: 100%;
   }
-  
+
   .cta__content {
-    max-width: 100%; 
+    max-width: 100%;
   }
   /* Footer */
   .footer {
-    padding: 60px 0; 
+    padding: 60px 0;
   }
-  
+
   .footer .container {
     padding-left: 8px;
     padding-right: 8px;
     max-width: 100%;
   }
-  
+
   .footer__cards {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    
+
   }
-  
+
   .footer-card {
     width: 100%;
     max-width: 752px;
     height: 204px;
     flex: 0 0 auto;
   }
-  
+
   .footer__socials {
     margin-bottom: 12px;
   }
-  
+
   .footer__info {
     text-align: center;
   }
-  
+
   /* GIFTS Page 2 */
   .gifts-page {
   background-image: url('../assets/img/gifts-section-768.svg');
@@ -1119,7 +1149,7 @@ body {
   }
 
   .gifts-hero__title {
-  max-width: 426px; 
+  max-width: 426px;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -1146,7 +1176,7 @@ body {
 
   .gifts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 310px); 
+  grid-template-columns: repeat(2, 310px);
   gap: 12px;
   justify-content: center;
   }
@@ -1155,7 +1185,7 @@ body {
 /* ADAPTIVE: 380 */
 @media (max-width: 380px) {
   .header .container {
-    padding: 0 8px; 
+    padding: 0 8px;
   }
   .header {
     padding: 12px 0;
@@ -1221,7 +1251,7 @@ body {
     height: 528px;
     margin-top: 0;
   }
-  
+
   /* SLider and Gifts 380 */
   .slider {
     background-image: url('../assets/img/slider-section-380.svg');
@@ -1306,17 +1336,17 @@ body {
     padding-top: 60px;
     padding-bottom: 60px;
   }
-  
+
   .footer .container {
     padding: 0 8px;
   }
-  
+
   .footer__cards {
     flex-direction: column;
     gap: 12px;
     margin-bottom: 60px;
   }
-  
+
   .footer-card {
     width: 100%;
     max-width: 364px;
@@ -1330,13 +1360,13 @@ body {
       background-position: center top;
       height: auto !important;
     }
-  
+
     .gifts-page .container {
       padding-left: 8px;
       padding-right: 8px;
       max-width: 100%;
     }
-  
+
     .gifts-hero__title {
       max-width: 364px;
       min-height: 240px;
@@ -1358,7 +1388,7 @@ body {
     }
 
     .tabs__btn {
-      padding: 12px 8px !important; 
+      padding: 12px 8px !important;
       width: auto;
       white-space: nowrap;
       margin: 0 !important;
@@ -1366,19 +1396,19 @@ body {
 
     .gifts-grid {
       display: grid;
-      grid-template-columns: 310px; 
+      grid-template-columns: 310px;
       gap: 12px;
       justify-content: center;
-      min-height: 4236px; 
+      min-height: 4236px;
     }
-    
+
     .gift-card {
       width: 310px;
       height: 342px;
     }
 
   }
-  
-  
+
+
 
 
