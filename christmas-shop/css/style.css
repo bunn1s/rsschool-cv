@@ -12,7 +12,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #181C29;
   background: #ffffff;
-  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   overflow-x: hidden;
 }
@@ -38,7 +38,17 @@ body {
 .header .container {
   max-width: 1440px;
   width: 100%;
-  padding: 0 82px;
+  margin: 0 auto;
+  padding-left: 82px;
+  padding-right: 82px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1440px) {
+  .header .container {
+    padding-left: max(8px, calc((100% - 1276px) / 2));
+    padding-right: max(8px, calc((100% - 1276px) / 2));
+  }
 }
 
 .header__wrapper {
@@ -119,6 +129,45 @@ body {
 .nav__link--inactive:hover {
   background-color: rgba(255, 70, 70, 0.1);
   color: #181C29;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+.burger__line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #181C29;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.burger.open .burger__line:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.burger.open .burger__line:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 /* Hero section */
@@ -338,7 +387,7 @@ body {
   align-items: center;
   padding: 0 82px;
   gap: 20px;
-  padding-left: max(8px, calc((100% - 1276px) / 2)) !important;
+  padding-left: max(8px, calc((100% - 1276px) / 2));
   transition: transform 0.6s ease-in-out;
 }
 
@@ -367,8 +416,9 @@ body {
   justify-content: flex-end;
   margin: 20px auto 0;
   gap: 20px;
-  padding-right: max(8px, calc((100% - 1276px) / 2)) !important;
+  padding-right: max(8px, calc((100% - 1276px) / 2));
   margin-top: 20px;
+  margin-bottom: 0;
   padding-bottom: 60px;
   box-sizing: border-box;
 }
@@ -398,7 +448,7 @@ body {
 }
 
 .slider__btn:disabled {
-  opacity: 0.5 !important;
+  opacity: 0.5;
   cursor: default;
   pointer-events: none;
   border-color: #FFFFFF;
@@ -416,16 +466,12 @@ body {
 }
 
 .slider__btn:not(:disabled):hover svg path {
-  stroke: #FF4646 !important;;
+  stroke: #FF4646;
 }
 
 .slider__btn:not(:disabled):hover img {
-  transform: none !important;
+  transform: none;
   filter: brightness(0) saturate(100%) invert(42%) sepia(74%) saturate(3015%) hue-rotate(338deg) brightness(120%) contrast(1000%) !important;
-}
-
-.slider__controls {
-  margin-bottom: 0 !important;
 }
 
 /* Gifts section */
@@ -562,7 +608,7 @@ body {
   background-image: url('../assets/img/cta-section.svg');
   background-repeat: no-repeat;
   background-size: 1440px auto;
-  background-position: center top;
+  background-position: center;
   height: 668px;
   width: 100%;
   max-width: 1440px;
@@ -844,7 +890,7 @@ body {
 .gifts-page {
   background-image: url('../assets/img/gifts-section.svg');
   background-repeat: no-repeat;
-  background-size: 1440px auto;
+  background-size: contain;
   background-position: center top;
   height: auto;
   min-height: 100vh;
@@ -855,7 +901,7 @@ body {
   max-width: 1440px;
   display: flex;
   margin: 0 auto;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
 }
 
@@ -925,31 +971,6 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Burger */
-.burger {
-  display: none;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  border-radius: 8px;
-}
-
-.burger__line {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: #181C29;
-  transition: transform 0.3s ease;
-}
-
 @media (max-width: 1060px) {
   .footer__cards {
     flex-direction: column;
@@ -987,33 +1008,42 @@ body {
 
   .logo {
     margin-left: 0;
-    padding: 8px;
+    padding: 8px 20px;
+  }
+
+  .burger {
+    display: flex;
   }
 
   .nav {
-    margin-left: 0;
-    display: none;
-  }
-
-  .burger {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: #ffffff;
+    z-index: 100;
+    transition: right 0.3s ease-in-out;
     display: flex;
-    position: static;
-    margin-right: 0;
-    width: 40px;
-    height: 40px;
+    justify-content: center;
+    align-items: center;
   }
 
-  .header__wrapper {
-    justify-content: space-between;
+  .nav.open {
+    right: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 40px;
+    list-style: none;
+    text-align: center;
+    padding: 0;
   }
 
   .hero {
-    background-image: url('../assets/img/hero-section-768.svg');
+    background-image: url('../assets/img/hero-section.svg');
     background-size: cover;
-  }
-
-  .burger {
-    display: flex;
   }
 
   /* About */
@@ -1060,53 +1090,13 @@ body {
 
   /* Slider */
   .slider {
-  background-image: url('../assets/img/slider-section-768.svg');
-  background-size: cover;
-  }
-
-  .slider__controls {
-  padding-right: 8px !important;
-  }
-
-  .slider__track-container {
-  width: 100%;
-  overflow: hidden;
-  }
-
-  .slider__track {
-  padding-left: 8px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transform: translateX(0) !important;
-  }
-
-  .slider__word {
-  font-size: 80px;
-  }
-
-  .slider__img {
-  width: 200px;
-  height: 200px;
-  }
-
-  .slider__controls {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 8px;
-  margin: 20px 0 0 0;
-  padding-bottom: 60px;
-  }
-
-  .slider__btn {
-  width: 56px;
-  height: 56px;
+    background-image: url('../assets/img/slider-section-768.svg');
+    background-size: cover;
   }
 
 /* Gifts */
   .gifts-section {
-    background-image: url('../assets/img/best-gifts-section-768.svg');
+    background-image: url('../assets/img/best-gifts-section.svg');
     background-color: #FF4646;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1239,7 +1229,7 @@ body {
 
   /* GIFTS Page 2 */
   .gifts-page {
-    background-image: url('../assets/img/gifts-section-768.svg');
+    background-image: url('../assets/img/gifts-section.svg');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center top;
@@ -1492,7 +1482,7 @@ body {
 
   /* GIFTS Page 2 */
     .gifts-page {
-      background-image: url('../assets/img/gifts-section-380.svg');
+      background-image: url('../assets/img/gifts-section.svg');
       background-size: 100% auto;
       background-position: center top;
       height: auto !important;
