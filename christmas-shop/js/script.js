@@ -35,6 +35,7 @@ const track = document.getElementById('slider-track');
 const btnPrev = document.getElementById('btn-prev');
 const btnNext = document.getElementById('btn-next');
 
+if (track && btnPrev && btnNext) {
 let currentStep = 0;
 
 function updateSlider() {
@@ -74,7 +75,7 @@ window.addEventListener('resize', () => {
 });
 
 updateSlider();
-
+}
 
 // --- !!! TIMER !!! ---
 function updateTimer() {
@@ -108,3 +109,80 @@ function updateTimer() {
 
     setInterval(updateTimer, 1000);
     updateTimer();
+
+
+// --- GIFTS PAGE 2 ---
+let allGifts = [];
+
+async function loadGifts() {
+
+  const giftsContainer = document.getElementById('gifts-container');
+  const bestContainer = document.getElementById('best-gifts-container');
+  const container = giftsContainer || bestContainer;
+  if (!container) return;
+
+  try {
+    const response = await fetch('./gifts.json');
+    allGifts = await response.json();
+
+    if (container.id === 'best-gifts-container') {
+      const shuffled = [...allGifts].sort(() => 0.5 - Math.random());
+      renderGifts(shuffled.slice(0, 4), container);
+    } else {
+
+      renderGifts(allGifts, container);
+      initTabs();
+    }
+
+  } catch (error) {
+    console.error('Error loading JSON:', error);
+  }
+}
+
+function renderGifts(data, container) {
+  if (!container) return;
+  container.innerHTML = '';
+
+  data.forEach(gift => {
+    const card = document.createElement('div');
+    card.classList.add('gift-card');
+    const categoryClass = gift.category.toLowerCase().split(' ').join('-');
+
+    let imageName = '';
+    if (gift.category === 'For Work') imageName = 'gift-work';
+    else if (gift.category === 'For Health') imageName = 'gift-health';
+    else if (gift.category === 'For Harmony') imageName = 'gift-harmony';
+
+    card.innerHTML = `
+      <div class="gift-card__image">
+        <img src="./assets/img/image-gifts/${imageName}.png" alt="${gift.name}">
+      </div>
+      <div class="gift-card__content">
+        <h3 class="gift-card__category ${categoryClass}">${gift.category}</h3>
+        <h2 class="gift-card__title">${gift.name}</h2>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function initTabs() {
+  const tabs = document.querySelectorAll('.tabs__btn');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      tabs.forEach(btn => btn.classList.remove('tabs__btn--active'));
+      e.target.classList.add('tabs__btn--active');
+      const category = e.target.textContent.trim();
+      if (category === 'All') {
+        renderGifts(allGifts, document.getElementById('gifts-container'));
+      } else {
+        const filtered = allGifts.filter(gift => gift.category === category);
+        renderGifts(filtered, document.getElementById('gifts-container'));
+      }
+    });
+  });
+}
+
+loadGifts();
+
+
