@@ -30,7 +30,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-// --- Slider (for main page) ---
+// --- Slider ---
 const track = document.getElementById('slider-track');
 const btnPrev = document.getElementById('btn-prev');
 const btnNext = document.getElementById('btn-next');
@@ -53,26 +53,26 @@ function updateSlider() {
   btnNext.disabled = (currentStep === totalSteps);
 }
 
-btnNext.addEventListener('click', () => {
-  const windowWidth = window.innerWidth;
-  const totalSteps = windowWidth > 768 ? 3 : 6;
-  if (currentStep < totalSteps) {
-    currentStep++;
-    updateSlider();
-  }
-});
+  btnNext.addEventListener('click', () => {
+    const windowWidth = window.innerWidth;
+    const totalSteps = windowWidth > 768 ? 3 : 6;
+    if (currentStep < totalSteps) {
+      currentStep++;
+      updateSlider();
+    }
+  });
 
-btnPrev.addEventListener('click', () => {
-  if (currentStep > 0) {
-    currentStep--;
-    updateSlider();
-  }
-});
+  btnPrev.addEventListener('click', () => {
+    if (currentStep > 0) {
+      currentStep--;
+      updateSlider();
+    }
+  });
 
-window.addEventListener('resize', () => {
-  currentStep = 0;
-  updateSlider();
-});
+  window.addEventListener('resize', () => {
+    currentStep = 0;
+    updateSlider();
+  });
 
 updateSlider();
 }
@@ -162,6 +162,11 @@ function renderGifts(data, container) {
         <h2 class="gift-card__title">${gift.name}</h2>
       </div>
     `;
+
+    card.addEventListener('click', () => {
+      openModal(gift);
+    });
+
     container.appendChild(card);
   });
 }
@@ -183,6 +188,77 @@ function initTabs() {
   });
 }
 
-loadGifts();
+    loadGifts();
 
+// --- Modal ---
+function openModal(gift) {
+  const overlay = document.getElementById('modal-overlay');
+  const modalBody = document.getElementById('modal-body');
+  if (!overlay || !modalBody) return;
 
+  const categoryClass = gift.category.toLowerCase().split(' ').join('-');
+  const imageName = gift.category === 'For Work' ? 'gift-work' :
+                    gift.category === 'For Health' ? 'gift-health' : 'gift-harmony';
+
+  const sp = gift.superpowers || {};
+  const powers = [
+    { name: 'Live', value: sp.live || '+0' },
+    { name: 'Create', value: sp.create || '+0' },
+    { name: 'Love', value: sp.love || '+0' },
+    { name: 'Dream', value: sp.dream || '+0' }
+  ];
+
+  const renderSnowflakes = (value) => {
+    const num = parseInt(value.toString().replace(/\D/g, '')) || 0;
+    const count = num / 100;
+    let html = '';
+    for (let i = 0; i < 5; i++) {
+      html += `
+      <img
+        src="./assets/img/snowflake.svg"
+        alt="snowflake"
+        class="modal-snowflake"
+        style="width: 16px; height: 16px; opacity: ${i < count ? '1' : '0.1'}"
+      >`;
+    }
+    return html;
+  };
+
+  const statsHtml = powers.map(p => `
+    <div class="modal-row">
+      <span class="modal-row-name">${p.name}</span>
+      <div class="modal-row-data">
+        <span class="modal-row-value">${p.value}</span>
+        <div class="modal-row-stars">${renderSnowflakes(p.value)}</div>
+      </div>
+    </div>
+  `).join('');
+
+  modalBody.innerHTML = `
+    <div class="modal-container">
+      <div class="modal-img-wrap">
+        <img src="./assets/img/image-gifts/${imageName}.png" alt="${gift.name}">
+      </div>
+      <div class="modal-content-wrap">
+      <p class="gift-card__category ${categoryClass}">${gift.category}</p>
+      <h3 class="modal-title">${gift.name}</h3>
+      <p class="modal-description">${gift.description}</p>
+
+      <h4 class="modal-subtitle">Adds superpowers:</h4>
+      <div class="modal-stats-block">
+        ${statsHtml}
+      </div>
+    </div>
+  </div>
+`;
+
+  overlay.classList.add('open');
+  document.body.classList.add('no-scroll');
+}
+
+document.getElementById('modal-overlay')?.addEventListener('click', (e) => {
+  if (e.target.id === 'modal-overlay' || e.target.closest('#modal-close')) {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.classList.remove('no-scroll');
+  }
+});
