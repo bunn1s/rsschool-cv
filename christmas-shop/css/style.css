@@ -4,18 +4,20 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  scrollbar-gutter: stable;
+html, body {
+    font-family: "Montserrat", sans-serif;
+    color: #181c29;
+    background: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-  font-family: "Montserrat", sans-serif;
-  color: #181c29;
-  background: #ffffff;
-  max-width: 1440px;
-  margin: 0 auto;
-  overflow-x: hidden;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* MAIN PAGE */
@@ -786,9 +788,8 @@ body.no-scroll {
   flex: 1 1 310px;
   background-color: #ecf3f8;
   border-radius: 20px;
-  padding: 20px;
   width: 100%;
-  max-width: 364px;
+  max-width: 417px;
   height: 204px;
   min-height: 204px;
   text-align: center;
@@ -803,20 +804,6 @@ body.no-scroll {
   transition:
     transform 0.3s ease,
     background-color 0.3s ease;
-}
-
-.footer-card:hover {
-  transform: translateY(-2px);
-}
-
-/* Mouse click */
-@media (pointer: fine) {
-
-  .footer-card:hover .footer-card__title,
-  .footer-card:hover .footer-card__desc {
-    color: #ff4646 !important;
-    transition: color 0.3s ease;
-  }
 }
 
 .footer-card__img {
@@ -875,14 +862,6 @@ body.no-scroll {
   text-decoration: none;
 }
 
-.footer__socials a:hover {
-  transform: scale(1.5);
-}
-
-.footer__socials a:hover img {
-  filter: brightness(0) saturate(100%) invert(42%) sepia(74%) saturate(3015%) hue-rotate(338deg) brightness(101%) contrast(101%) !important;
-}
-
 .footer__info {
   text-align: center;
 }
@@ -910,17 +889,31 @@ body.no-scroll {
     transform 0.3s ease;
 }
 
-.footer__made:hover {
-  color: #ff4646;
-}
-
-/* Scale School */
 @media (pointer: fine) {
+  .footer-card:hover .footer-card__title,
+  .footer-card:hover .footer-card__desc {
+    color: #ff4646;
+  }
+
+  .footer-card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .footer__socials a:hover {
+    transform: scale(1.5);
+  }
+
+  .footer__socials a:hover img {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(74%) saturate(3015%) hue-rotate(338deg) brightness(101%) contrast(101%);
+  }
+
   .footer__made:hover {
     color: #ff4646;
     transform: scale(1.1);
   }
 }
+
 
 /* GIFTS PAGE */
 .gifts-page {
@@ -1289,6 +1282,12 @@ body.no-scroll {
 }
 
 @media (max-width: 768px) {
+  .nav__link--active {
+    background-color: transparent !important;
+    color: #181c29 !important;
+    pointer-events: auto !important;
+  }
+
   .back-to-top.visible {
     display: flex;
   }
@@ -1545,6 +1544,11 @@ body.no-scroll {
     text-align: center;
   }
 
+  .footer__social-link,
+  .footer__school-link {
+  -webkit-tap-highlight-color: transparent;
+  }
+
   /* GIFTS Page 2 */
   .gifts-page {
     background-image: url("../assets/img/gifts-section.svg");
@@ -1584,7 +1588,9 @@ body.no-scroll {
   .gifts-tabs {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: clamp(0px, 2vw, 8px);
+    width: 100%;
+    flex-wrap: nowrap;
   }
 
   .gifts-grid {

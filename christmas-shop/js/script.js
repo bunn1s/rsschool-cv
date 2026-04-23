@@ -1,3 +1,21 @@
+// --- Button GIFTS ---
+const highlightActiveLink = () => {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  navLinks.forEach(link => {
+
+    if (link.getAttribute('href').includes(currentPath) && currentPath !== '/') {
+      link.classList.add('nav__link--active');
+    } else if (currentPath === '/' && link.getAttribute('href').includes('index.html')) {
+        link.classList.add('nav__link--active');
+    }
+  });
+};
+
+window.addEventListener('DOMContentLoaded', highlightActiveLink);
+
+
 // --- Burger MENU ---
 const burger = document.getElementById("burger");
 const nav = document.querySelector(".nav");
