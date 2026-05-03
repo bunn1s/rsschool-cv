@@ -168,7 +168,7 @@ function getWorkingDaysInMonth(year, month) {
   const date = new Date(year, month, 1);
   while (date.getMonth() === month) {
     const day = date.getDay();
-    if (day !== 0 && day !== 6) count++; // exclude Sunday (0) and Saturday (6)
+    if (day !== 0 && day !== 6) count++;
     date.setDate(date.getDate() + 1);
   }
   return count;
