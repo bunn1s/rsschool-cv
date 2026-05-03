@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Button to open the sidebar (when it is hidden) -->
+
   <button id="openSidebarBtn" class="icon-btn open-btn hidden"><span class="arrow-icon">→</span></button>
 
   <!-- Sidebar -->
@@ -88,9 +88,9 @@
             <th>Age <span class="sort-icon" data-field="age">⇅</span></th>
             <th>Position <span class="sort-icon" data-field="position">⇅</span><span class="filter-icon" data-field="position">⌕</span></th>
             <th>Salary <span class="sort-icon" data-field="salary">⇅</span></th>
-            <th>Exp. Pay <span class="sort-icon" data-field="expectedPay">⇅</span></th>
+            <th>Estimated Payment <span class="sort-icon" data-field="expectedPay">⇅</span></th>
             <th>Project</th>
-            <th>Proj. Income <span class="sort-icon" data-field="forecastRevenue">⇅</span></th>
+            <th>Projcted Income <span class="sort-icon" data-field="forecastRevenue">⇅</span></th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -100,22 +100,26 @@
   </main>
 
   <!-- Sliding panels for forms -->
-  <div id="addEmployeePanel" class="side-panel-right">
-    <h2>Add New Employee</h2>
-    <form id="addEmployeeForm">
-      <label>Name *</label>
-      <input type="text" id="empName" required minlength="3" pattern="[A-Za-z]+">
+<div id="addEmployeePanel" class="side-panel-right">
+  <h2>Add New Employee</h2>
+  <form id="addEmployeeForm">
+    <div class="form-group">
+      <label for="empName">Name *</label>
+      <input type="text" id="empName" required minlength="3" pattern="[A-Za-z]+" placeholder="Enter first name">
       <span class="error-message" id="nameError"></span>
-
-      <label>Surname *</label>
-      <input type="text" id="empSurname" required minlength="3" pattern="[A-Za-z]+">
+    </div>
+    <div class="form-group">
+      <label for="empSurname">Surname *</label>
+      <input type="text" id="empSurname" required minlength="3" pattern="[A-Za-z]+" placeholder="Enter last name">
       <span class="error-message" id="surnameError"></span>
-
-      <label>Date of Birth *</label>
+    </div>
+    <div class="form-group">
+      <label for="empDob">Date of Birth *</label>
       <input type="date" id="empDob" required>
       <span class="error-message" id="dobError"></span>
-
-      <label>Position *</label>
+    </div>
+    <div class="form-group">
+      <label for="empPosition">Position *</label>
       <select id="empPosition" required>
         <option value="">Select position</option>
         <option value="Junior">Junior</option>
@@ -126,17 +130,18 @@
         <option value="Business Manager">Business Manager</option>
       </select>
       <span class="error-message" id="positionError"></span>
-
-      <label>Salary *</label>
-      <input type="number" id="empSalary" required min="0.01" step="0.01">
+    </div>
+    <div class="form-group">
+      <label for="empSalary">Salary *</label>
+      <input type="number" id="empSalary" required min="0.01" step="0.01" placeholder="0.00">
       <span class="error-message" id="salaryError"></span>
-
-      <div class="form-buttons">
-        <button type="submit" class="btn primary" id="saveEmployeeBtn" disabled>Add</button>
-        <button type="button" class="btn secondary" id="cancelEmployeeBtn">Cancel</button>
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="form-buttons">
+      <button type="button" class="btn primary" id="saveEmployeeBtn" disabled>Add</button>
+      <button type="button" class="btn secondary" id="cancelEmployeeBtn">Cancel</button>
+    </div>
+  </form>
+</div>
 
 <div id="addProjectPanel" class="side-panel-right">
   <h2>Add New Project</h2>

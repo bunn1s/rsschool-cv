@@ -260,7 +260,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .primary {
@@ -293,6 +293,7 @@ body {
 .small {
   font-size: 13px;
   padding: 5px 10px;
+  margin: 5px;
 }
 
 .hidden {
@@ -302,13 +303,17 @@ body {
 /* MAIN CONTENT */
 main {
   flex: 1;
-  overflow-y: auto;
+  overflow: auto;
   padding: 40px;
   transition: margin-left 0.3s;
 }
 
 main.shifted {
   margin-left: 48px;
+}
+
+table {
+  min-width: 800px;
 }
 
 .view {
@@ -460,6 +465,12 @@ tbody tr:hover {
   font-size: 20px;
 }
 
+.modal-content p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -502,7 +513,7 @@ tbody tr:hover {
 }
 
 .modal-content .btn.small {
-  font-size: 14px;
+  font-size: 18px;
   padding: 6px 14px;
   margin-right: 4px;
 }
@@ -514,4 +525,263 @@ tbody tr:hover {
 .modal-content .form-group span {
   font-weight: 500;
   margin-left: 8px;
+}
+
+/* Action buttons in Employees table */
+.assign-btn {
+  background: #2563eb;
+  color: white;
+}
+.assign-btn:hover {
+  background: #1d4ed8;
+}
+
+.assign-btn:disabled {
+  background: #9ca3af;
+  color: #e5e7eb;
+  cursor: not-allowed;
+}
+
+.delete-employee-btn {
+  background: #dc2626;
+  color: white;
+}
+.delete-employee-btn:hover {
+  background: #b91c1c;
+}
+
+.availability-btn {
+  background: #9b59b6;
+  color: white;
+}
+.availability-btn:hover {
+  background: #8e44ad;
+}
+
+.show-assignments-btn {
+  background: #3498db;
+  color: white;
+}
+.show-assignments-btn:hover {
+  background: #2980b9;
+}
+
+.show-employees-btn {
+  background: #3498db;
+  color: white;
+}
+.show-employees-btn:hover {
+  background: #2980b9;
+}
+
+.action-menu {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px 2px 0;
+  min-width: 160px;
+}
+
+.action-menu button {
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+.action-menu button:last-child {
+  margin-bottom: 0;
+}
+
+/* See at Projects / See at Employees */
+.see-projects-btn,
+.see-employees-btn {
+  background: #3498db !important;
+  color: white;
+}
+.see-projects-btn:hover,
+.see-employees-btn:hover {
+  background: #2980b9 !important;
+}
+
+/* Unassign from menu */
+.unassign-from-menu-btn {
+  background: #dc2626 !important;
+  color: white;
+}
+.unassign-from-menu-btn:hover {
+  background: #b91c1c !important;
+}
+/* Action menu buttons */
+.see-projects-btn,
+.see-employees-btn {
+  background: #3498db !important;
+  color: white;
+  font-weight: 500;
+}
+.see-projects-btn:hover,
+.see-employees-btn:hover {
+  background: #2980b9 !important;
+}
+
+.unassign-from-menu-btn {
+  background: #dc2626 !important;
+  color: white;
+  font-weight: 500;
+}
+.unassign-from-menu-btn:hover {
+  background: #b91c1c !important;
+}
+
+/* Assign popup enhancements */
+.assign-modal {
+  min-width: 500px;
+}
+
+.assign-info-row {
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.slider-container {
+  margin: 8px 0;
+}
+
+.slider-hint {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 4px;
+}
+
+.assign-project-info,
+.assign-effective-display {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.assign-warning {
+  background: #ffe0e0;
+  color: #dc2626;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 15px 0;
+  display: none;
+  font-weight: 500;
+}
+
+.assign-save-btn {
+  background: #10b981;
+  color: white;
+  font-weight: 500;
+  border: none;
+}
+.assign-save-btn:hover {
+  background: #059669;
+}
+
+.modal-content input[type="range"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Highlight editable cells on hover */
+.editable-position,
+.editable-salary {
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 4px;
+}
+
+.editable-position:hover,
+.editable-salary:hover {
+  background: #eff6ff;
+}
+
+/* Styles for select and input when they appear inside a cell */
+.editable-position select,
+.editable-salary input {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid #2563eb;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.editable-salary input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+/* --- Calendar grid (Availability) --- */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+  margin-bottom: 15px;
+  background: #e2e8f0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-weekday {
+  font-weight: 600;
+  padding: 10px 0;
+  background: #f8fafc;
+  font-size: 13px;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendar-day {
+  padding: 12px 0;
+  cursor: pointer;
+  background: #ffffff;
+  font-size: 14px;
+  transition: background 0.15s;
+  color: #0f172a;
+}
+
+.calendar-day:hover {
+  background: #eff6ff;
+}
+
+.calendar-day.weekend {
+  color: #e74c3c;
+  background: #fff5f5;
+}
+
+.calendar-day.vacation {
+  background: #fca5a5;
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-day.today {
+  box-shadow: inset 0 0 0 2px #2563eb;
+  background: #eff6ff;
+  font-weight: 600;
+}
+
+.calendar-SaveVacationBtn.btn.primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2563eb;
+  color: white;
+  font-weight: 500;
+  border: none;
 }
